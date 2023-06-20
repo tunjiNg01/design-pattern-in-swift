@@ -5,55 +5,45 @@ import Foundation
 import UIKit
 
 // Abstract factory
-protocol ShapeFactory {
-    func createCircle() -> Circle
-    func createRectangle() -> Rectangle
-    func createSquare() -> Square
+protocol Databases {
+    func createMongoDB() -> MongoDB
+    func creatMysqlDB() -> MySqlDB
 }
 
-// Concrete factory
-class ShapeFactoryImpl: ShapeFactory {
-    func createCircle() -> Circle {
-        return Circle()
+class DBFactory: Databases {
+    func createMongoDB() -> MongoDB {
+        return MongoDB()
+    
     }
-
-    func createRectangle() -> Rectangle {
-        return Rectangle()
-    }
-
-    func createSquare() -> Square {
-        return Square()
+    
+    func creatMysqlDB() -> MySqlDB {
+        return MySqlDB()
     }
 }
 
-// Product
-protocol Shape {
-    var name: String { get }
+protocol ConnectString {
+    func createConnection() -> String
 }
 
-// Concrete product
-class Circle: Shape {
-    var name: String = "Circle"
+class MongoDB: ConnectString {
+    func createConnection() -> String{
+        return "connected to mongoDB"
+    }
 }
 
-class Rectangle: Shape {
-    var name: String = "Rectangle"
+class MySqlDB: ConnectString{
+    func createConnection() -> String{
+        return "connected to mysql DB"
+    }
 }
 
-class Square: Shape {
-    var name: String = "Square"
-}
+let dbFactory = DBFactory()
 
-// Client code
-let shapeFactory = ShapeFactoryImpl()
+let mongodb = dbFactory.createMongoDB()
 
-let circle = shapeFactory.createCircle()
-print(circle.name) // Circle
+let mysql = dbFactory.creatMysqlDB()
 
-let rectangle = shapeFactory.createRectangle()
-print(rectangle.name) // Rectangle
+print(mongodb.createConnection())
+print(mysql.createConnection())
 
-let square = shapeFactory.createSquare()
-print(square.name) // Square
 
-//: [Next](@next)
