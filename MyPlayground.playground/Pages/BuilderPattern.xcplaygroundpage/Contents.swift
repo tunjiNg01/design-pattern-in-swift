@@ -7,57 +7,56 @@ class PizzaBuilder {
     var crust: String = ""
     var sauce: String = ""
     var toppings: [String] = []
-
-    func setCrust(_ crust: String) {
+    
+    func setCrust(_ crust: String){
+        // logic
         self.crust = crust
     }
-
-    func setSauce(_ sauce: String) {
+    
+    func setSauce(_ sauce: String){
         self.sauce = sauce
     }
-
-    func addTopping(_ topping: String) {
+    
+    func setTopping(_ topping: String) {
         toppings.append(topping)
     }
-
+    
+    
     func build() -> Pizza {
         return Pizza(crust: crust, sauce: sauce, toppings: toppings)
     }
 }
 
 // Director
-class PizzaOrder {
-    func orderPizza() -> Pizza {
-        let builder = PizzaBuilder()
 
+class OrderPizza {
+    func order() -> Pizza {
+        let builder = PizzaBuilder()
+        
         builder.setCrust("Thin crust")
         builder.setSauce("Pepperoni")
-        builder.addTopping("Mushrooms")
-        builder.addTopping("Onions")
-
+        builder.setTopping("Mushroom")
+        
         return builder.build()
     }
 }
 
 // Product
+
 class Pizza {
     var crust: String
     var sauce: String
     var toppings: [String]
-
-    init(crust: String, sauce: String, toppings: [String]) {
+    
+    init(crust: String, sauce: String, toppings:[String]) {
         self.crust = crust
         self.sauce = sauce
         self.toppings = toppings
     }
 }
 
-// Client code
-let pizzaOrder = PizzaOrder()
-let pizza = pizzaOrder.orderPizza()
+let orderpizza = OrderPizza()
 
-print(pizza.crust) // Thin crust
-print(pizza.sauce) // Pepperoni
-print(pizza.toppings) // [Mushrooms, Onions]
+let pizza = orderpizza.order()
 
-//: [Next](@next)
+print(pizza.crust)
