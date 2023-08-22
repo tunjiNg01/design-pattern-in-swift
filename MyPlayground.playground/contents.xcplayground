@@ -9,5 +9,6 @@
         <page name='PrototypePattern'/>
         <page name='DecoratorDesignPattern'/>
         <page name='FacadeDesignPattern'/>
+        <page name='FlyWeightDesignPattern'/>
     </pages>
 </playground>
