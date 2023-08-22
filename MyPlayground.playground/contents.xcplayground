@@ -7,7 +7,7 @@
         <page name='Properties'/>
         <page name='BuilderPattern'/>
         <page name='PrototypePattern'/>
-        <page name='Untitled Page 2'/>
         <page name='DecoratorDesignPattern'/>
+        <page name='FacadeDesignPattern'/>
     </pages>
 </playground>
