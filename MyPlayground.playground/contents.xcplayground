@@ -11,5 +11,6 @@
         <page name='FacadeDesignPattern'/>
         <page name='FlyWeightDesignPattern'/>
         <page name='ProxyDesignPattern'/>
+        <page name='ChainofResponsibilityPattern'/>
     </pages>
 </playground>
