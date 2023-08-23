@@ -12,5 +12,6 @@
         <page name='FlyWeightDesignPattern'/>
         <page name='ProxyDesignPattern'/>
         <page name='ChainofResponsibilityPattern'/>
+        <page name='CommandDesignPattern'/>
     </pages>
 </playground>
