@@ -14,6 +14,7 @@ class Memory {
     func load(position: Int, data: String) { /* Implementation */ }
 }
 
+// subsystems facade
 class HardDrive {
     func read(position: Int, size: Int) -> String {
         return "Reading the hard drive with size: \(size), and position: \(position)"
